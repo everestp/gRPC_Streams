@@ -14,7 +14,7 @@ type server struct{
 	 mainapipb.UnimplementedCalculatorServer
 }
 
-func (s  *server) GenerateFibonacci(req *mainapipb.FibonacciRequest , stream mainapipb.Calculator_GenerateFibbonacciServer) error{
+func (s  *server) GenerateFibbonacci(req *mainapipb.FibonacciRequest , stream mainapipb.Calculator_GenerateFibbonacciServer) error{
  n := req.N
  a,b := 0,1
 
