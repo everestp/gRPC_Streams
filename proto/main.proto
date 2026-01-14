@@ -7,6 +7,7 @@ option go_package = "/proto/gen;mainapipb";
 service Calculator {
     rpc Add(AddRequest) returns (AddRequest);  //Unary RPC
     rpc GenerateFibbonacci(FibonacciRequest) returns (stream FibonacciResponse );  //Server side stream
+    rpc SendNumbers (stream NumberRequest) returns (NumberResponse);
 }
 
 
@@ -25,4 +26,13 @@ message FibonacciRequest {
 
 message  FibonacciResponse {
     int32 number = 1;  //Individual Fibonnacci  number
+}
+
+message NumberRequest {
+    int32 number =1 ;
+}
+
+message NumberResponse {
+  
+    int32 sum =2;
 }
